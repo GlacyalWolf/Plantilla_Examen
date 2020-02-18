@@ -14,15 +14,16 @@ import com.example.plantilla_examen.Model.Hospital;
 import com.example.plantilla_examen.R;
 import com.example.plantilla_examen.View.PrincipalRecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PrincipalRecyclerViewVM extends RecyclerView.Adapter<PrincipalRecyclerViewVM.AdapterPrincipalRecycler> {
-    static List<Hospital> hospitalList;
-    static NavController nv;
+    static ArrayList<Hospital> hospitalList;
+    //static NavController nv;
 
-    public PrincipalRecyclerViewVM(List<Hospital> hospitalList, NavController nv) {
+    public PrincipalRecyclerViewVM(ArrayList<Hospital> hospitalList /*NavController nv*/) {
         this.hospitalList= hospitalList;
-        this.nv=nv;
+        //this.nv=nv;
     }
 
     public static class AdapterPrincipalRecycler extends RecyclerView.ViewHolder {

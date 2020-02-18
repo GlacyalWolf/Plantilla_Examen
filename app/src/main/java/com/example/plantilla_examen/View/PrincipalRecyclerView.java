@@ -3,12 +3,16 @@ package com.example.plantilla_examen.View;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.plantilla_examen.Model.Listas;
 import com.example.plantilla_examen.R;
+import com.example.plantilla_examen.ViewModel.PrincipalRecyclerViewVM;
 
 
 public class PrincipalRecyclerView extends Fragment {
@@ -20,6 +24,7 @@ public class PrincipalRecyclerView extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
 
 
     public PrincipalRecyclerView() {
@@ -57,7 +62,13 @@ public class PrincipalRecyclerView extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_principal_recycler_view, container, false);
+        View view =inflater.inflate(R.layout.fragment_principal_recycler_view, container, false);
+        RecyclerView recyclerView = view.findViewById(R.id.recycler);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        PrincipalRecyclerViewVM adapter = new PrincipalRecyclerViewVM(Listas.hList());
+        recyclerView.setAdapter(adapter);
+        return view;
     }
 
 
