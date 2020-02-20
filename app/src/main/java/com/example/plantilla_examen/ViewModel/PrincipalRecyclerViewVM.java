@@ -9,7 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.navigation.NavController;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
+import com.example.plantilla_examen.DAO.Database;
 import com.example.plantilla_examen.Model.Hospital;
 import com.example.plantilla_examen.R;
 import com.example.plantilla_examen.View.PrincipalRecyclerView;
@@ -56,5 +58,8 @@ public class PrincipalRecyclerViewVM extends RecyclerView.Adapter<PrincipalRecyc
     public void onAttachedToRecyclerView(RecyclerView rv){
         super.onAttachedToRecyclerView(rv);
     }
+
+
+
 
 }
