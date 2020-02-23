@@ -5,19 +5,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.lifecycle.ViewModel;
-import androidx.navigation.NavController;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
 
-import com.example.plantilla_examen.DAO.Database;
 import com.example.plantilla_examen.Model.Hospital;
 import com.example.plantilla_examen.R;
-import com.example.plantilla_examen.View.PrincipalRecyclerView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class PrincipalRecyclerViewVM extends RecyclerView.Adapter<PrincipalRecyclerViewVM.AdapterPrincipalRecycler> {
     static ArrayList<Hospital> hospitalList;
