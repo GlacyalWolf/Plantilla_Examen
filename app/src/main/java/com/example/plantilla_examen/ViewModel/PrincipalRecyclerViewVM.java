@@ -1,5 +1,6 @@
 package com.example.plantilla_examen.ViewModel;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,16 +8,24 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.plantilla_examen.Model.DHospital;
 import com.example.plantilla_examen.Model.Hospital;
 import com.example.plantilla_examen.R;
+import com.example.plantilla_examen.Repo.Repository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PrincipalRecyclerViewVM extends RecyclerView.Adapter<PrincipalRecyclerViewVM.AdapterPrincipalRecycler> {
-    static ArrayList<Hospital> hospitalList;
-    //static NavController nv;
+    static List<DHospital> hospitalList;
 
-    public PrincipalRecyclerViewVM(ArrayList<Hospital> hospitalList /*NavController nv*/) {
+    //static NavController nv;
+    public List<DHospital> getHospitales(Context c){
+        return Repository.getHospitales(c);
+
+    }
+
+    public PrincipalRecyclerViewVM(List<DHospital> hospitalList /*NavController nv*/) {
         this.hospitalList= hospitalList;
         //this.nv=nv;
     }
@@ -38,7 +47,7 @@ public class PrincipalRecyclerViewVM extends RecyclerView.Adapter<PrincipalRecyc
 
     @Override
     public void onBindViewHolder(AdapterPrincipalRecycler adapterPrincipalRecycler, int i) {
-        adapterPrincipalRecycler.card.setText(hospitalList.get(i).getHospitalName());
+        adapterPrincipalRecycler.card.setText(hospitalList.get(i).hName);
 
     }
 
@@ -51,6 +60,8 @@ public class PrincipalRecyclerViewVM extends RecyclerView.Adapter<PrincipalRecyc
     public void onAttachedToRecyclerView(RecyclerView rv){
         super.onAttachedToRecyclerView(rv);
     }
+
+
 
 
 

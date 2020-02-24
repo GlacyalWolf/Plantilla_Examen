@@ -4,16 +4,17 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 
-import com.example.plantilla_examen.Model.TablaHospital;
+import com.example.plantilla_examen.Model.DHospital;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Dao
 public interface HospitalDAO {
     @Query("SELECT * FROM hospital")
-    ArrayList<TablaHospital> getAll();
+    List<DHospital> getAll();
 
     @Insert
-    void addHospital(TablaHospital hospital);
+    void addHospital(DHospital hospital);
 
 }

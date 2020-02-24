@@ -6,14 +6,14 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.example.plantilla_examen.Model.TablaHospital;
+import com.example.plantilla_examen.Model.DHospital;
 
-@Database(entities = {TablaHospital.class}, version = 1)
+@Database(entities = {DHospital.class}, version = 1,exportSchema = false)
 public abstract class Connection extends RoomDatabase {
 
     private static Connection INSTANCE;
 
-    public abstract TablaHospital tablaHospital();
+    public abstract HospitalDAO HospitalDAO();
 
     public static Connection getConnection(Context c){
         if (INSTANCE == null) {

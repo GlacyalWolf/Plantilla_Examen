@@ -5,14 +5,14 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "hospital")
-public class TablaHospital {
+public class DHospital {
     @PrimaryKey
     public int hospitalID;
 
     @ColumnInfo(name="NombreHospital")
     public String hName;
 
-    public TablaHospital(int hospitalID, String hName) {
+    public DHospital(int hospitalID, String hName) {
         this.hospitalID = hospitalID;
         this.hName = hName;
     }

@@ -11,8 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.plantilla_examen.Model.Listas;
-import com.example.plantilla_examen.Model.TablaHospital;
+import com.example.plantilla_examen.Model.DHospital;
 import com.example.plantilla_examen.R;
+import com.example.plantilla_examen.Repo.Repository;
 import com.example.plantilla_examen.ViewModel.PrincipalRecyclerViewVM;
 
 
@@ -63,14 +64,13 @@ public class PrincipalRecyclerView extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        TablaHospital h1=new TablaHospital(1,"sant pau");
-        TablaHospital h2=new TablaHospital(2,"sant gervasio");
+
 
         View view =inflater.inflate(R.layout.fragment_principal_recycler_view, container, false);
         RecyclerView recyclerView = view.findViewById(R.id.recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        PrincipalRecyclerViewVM adapter = new PrincipalRecyclerViewVM(Listas.hList());
+        PrincipalRecyclerViewVM adapter = new PrincipalRecyclerViewVM(Repository.getHospitales(getContext()));
         recyclerView.setAdapter(adapter);
         return view;
     }
